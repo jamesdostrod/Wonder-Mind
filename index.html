@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffbcf2;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            font-family: 'Inter' , sans-serif;
+            font-size: x-large;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            padding-inline: 20px;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2%;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+        #logo{
+            display: flex;
+        }
+        #mini-logo{
+            display: none;
+        }
+        @media (max-width: 600px){
+            #logo{
+                display: none;
+            }
+            #mini-logo{
+                display: flex;
+            }
+            ul{
+                font-size: large;
+            }
+            blockquote::after{
+                margin-left: 0px;
+            }
+        }
+        a:visited{
+            color: white;
+        }
+        a:link{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: #000000;
+        }
+        .Anxious{
+            width: 15rem;
+            height: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 300px;
+            font-family: 'Kings' , sans-serif;
+            font-size: larger;
+            color: white;
+            box-shadow: -2px 0px 40px 20px #ffbcf2 inset;
+            transition: background-color 3s ease;
+        }
+        .Happy{
+            width: 15rem;
+            height: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 300px;
+            font-family: 'Kings' , sans-serif;
+            font-size: larger;
+            color: white;
+            box-shadow: -2px 0px 40px 20px #ffbcf2 inset;
+            transition: background-color 3s ease;
+        }
+        .Numb{
+            width: 15rem;
+            height: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 300px;
+            font-family: 'Kings' , sans-serif;
+            font-size: larger;
+            color: white;
+            box-shadow: -2px 0px 40px 20px #ffbcf2 inset;
+            transition: background-color 3s ease;
+        }
+        .Happy:hover{
+            background-color: rgb(37, 103, 226);
+            cursor: pointer;
+        }
+        .Anxious:hover{
+            background-color: rgb(121, 255, 87);
+            cursor: pointer;
+        }
+        .Numb:hover{
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+        #new-ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 250px;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        /* p{
+            animation-name: subtitle;
+            animation-delay: 0.5s;
+            animation-fill-mode: backwards;
+            animation-duration: 15s;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        } */
+        footer{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: -300px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .loop{
+            width: 100%;
+            display: inline-block;
+            /* display: inline-block allows to set a width and height on the element. */
+            animation: 15s subtitle infinite linear;
+        }
+        @keyframes subtitle {
+            from{
+                transform: translateX(0%)
+            }
+            to{
+                transform: translateX(-100%)
+            }
+        }
+        blockquote:hover{
+            cursor: pointer;
+        }
+        blockquote::after{
+            content: attr(cite);
+            display: none;
+            background-color: #ffbcf2;
+            color: white;
+            width: fit-content;
+            font-size: medium;
+            padding-inline: 10px;
+            margin-top: 15px;
+            margin-left: 500px;
+            border-radius: 5px;
+        }
+        blockquote:hover::after{
+            display: flex;
+        }
+        #pl{
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <blockquote cite="https://www.wondermind.com/">
+            <img id="logo" src="svg/logo-in-white.svg" alt="" width="700" height="170">
+            <img id="mini-logo" src="svg/mini-logo-in-white.svg" alt="mini-logo" width="100" height="100px">
+        </blockquote>
+        <ul>
+            <li><a href="https://instagram.com/thesetab" target="_blank">TikTok</a></li>
+            <li><a href="https://instagram.com/thesetab" target="_blank">Instagram</a></li>
+            <li><a href="https://instagram.com/thesetab" target="_blank">X</a></li>
+        </ul>
+    </header>
+    <!-- <audio autoplay>
+        <source src="sound/Wonder mind-1.m4a" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio> -->
+    <audio autoplay id="player" src="sound/Wonder mind-1.m4a"></audio>
+    <div id="pl"> 
+      <button onclick="document.getElementById('player').play()">⏵</button> 
+      <button onclick="document.getElementById('player').pause()">⏸</button> 
+    </div>
+    <ul id="new-ul">
+        <li><div class="Anxious">Anxious</div></li>
+        <li><div class="Happy">Happy</div></li>
+        <li><div class="Numb">Numb</div></li>
+    </ul>
+    <footer>
+        <div class="loop">
+            <p>Hello there! Welcome to Wonder Mind ✷ The place you can find peace, How are you feeling now Zahra? Anxious, happy or numb?</p>
+        </div>
+        <div class="loop">
+            <p>☆ Select the exact button to ease your mind. By Ali Shokrgou, Aka James Dostrod. Credit: © wondermind 2024 by Selena Gomez.</p>
+        </div>
+    </footer>
+</body>
+</html>
